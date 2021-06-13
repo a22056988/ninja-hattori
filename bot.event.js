@@ -2,14 +2,14 @@ var bot = require('./bot.config')
 var User = require('./model');
  
 var intro_txt = 
-  '在下乃忍者哈特利是也\n來幫各位彙整回報內容\n'+
+  '在下編號9527\n來幫各位彙整回報內容\n'+
   '1. 輸入重複輸入可以蓋掉前一個人的內容\n'+
-  '2. 輸入「你逆」呼叫在下回報現況\n'+
+  '2. 輸入「9527」呼叫在下回報現況\n'+
   '3. 指令「重新回報」清空所有回報內容\n'+
   '4. 指令「重新建立名單」清空成員名單\n'+
-  '5. 指令「help」「助け」「哈特利」呼叫說明\n'+
-  '6. 在下說「在下已完成彙整 你逆」就會清空資料\n'+
-  '7. 請輸入「建立名單001到018」開始';
+  '5. 指令「help」「Help」「幫助」呼叫說明\n'+
+  '6. 在下說「在下已完成彙整」就會清空資料\n'+
+  '7. 請輸入「建立名單001到0」開始';
 
 bot.on('join', function (event) {
   if(event.source.groupId){
@@ -82,7 +82,7 @@ bot.on('message', function(event) {
             originalContentUrl: '/images/meme_img.jpg',
             previewImageUrl: '/images/meme_img.jpg',
           }
-          event.reply({ type: 'text', text: '真是的，一定又是煙捲搞的鬼' });
+          event.reply({ type: 'text', text: '真是的，一定又是秋香搞的鬼' });
           break;
 
         case '重新建立名單':
@@ -94,12 +94,12 @@ bot.on('message', function(event) {
 
         case 'help':
           event.reply(intro_txt);break;
-        case '助け':
+        case 'Help':
           event.reply(intro_txt);break;
-        case '哈特利':
+        case '幫助':
           event.reply(intro_txt);break;
 
-        case '你逆':
+        case '9527':
           var report_txt = '';
           var not_yet_report = '';
           User.find({group_id:group_id}).sort('member').exec().then(users=>{
