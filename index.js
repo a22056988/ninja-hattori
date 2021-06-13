@@ -6,7 +6,7 @@ const linebotParser = require('./bot.event')
 // Connect to MongoDB
 mongoose
   .connect(
-    '請輸入資料庫網址(mongo)',
+    'mongodb+srv://kaonature:nature377@cluster0.g5ii3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     { useNewUrlParser: true }
   )
   .then(() => console.log('MongoDB Connected'))
