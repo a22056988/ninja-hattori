@@ -99,7 +99,7 @@ bot.on('message', function(event) {
         case '幫助':
           event.reply(intro_txt);break;
 
-        case '9527':
+        case '現況如何':
           var report_txt = '';
           var not_yet_report = '';
           User.find({group_id:group_id}).sort('member').exec().then(users=>{
