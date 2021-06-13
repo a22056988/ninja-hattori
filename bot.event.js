@@ -3,7 +3,7 @@ var User = require('./model');
  
 var intro_txt = 
   '在下編號9527\n來幫各位彙整回報內容\n'+
-  '1. 輸入重複輸入可以蓋掉前一個人的內容\n'+
+  '1. 重複輸入可以蓋掉前一次的內容\n'+
   '2. 輸入「現況如何」呼叫在下回報現況\n'+
   '3. 指令「重新回報」清空所有回報內容\n'+
   '4. 指令「重新建立名單」清空成員名單\n'+
@@ -11,9 +11,13 @@ var intro_txt =
   '6. 在下說「在下已完成彙整」就會清空資料\n'+
   '7. 請輸入「建立名單001到099」開始';
 
+var intro_txt1 = 
+  '在下編號9527\n來幫各位彙整回報內容\n'+
+  '✔重複輸入可以蓋掉前一次的內容';
+
 bot.on('join', function (event) {
   if(event.source.groupId){
-    event.reply(intro_txt+"\n順帶一提，群組ID為"+event.source.groupId);
+    event.reply(intro_txt1+"\n\n\n群組ID為"+event.source.groupId);
   }
 });
   
