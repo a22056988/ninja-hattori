@@ -4,12 +4,12 @@ var User = require('./model');
 var intro_txt = 
   '在下編號9527\n來幫各位彙整回報內容\n'+
   '1. 輸入重複輸入可以蓋掉前一個人的內容\n'+
-  '2. 輸入「9527」呼叫在下回報現況\n'+
+  '2. 輸入「現況如何」呼叫在下回報現況\n'+
   '3. 指令「重新回報」清空所有回報內容\n'+
   '4. 指令「重新建立名單」清空成員名單\n'+
   '5. 指令「help」「Help」「幫助」呼叫說明\n'+
   '6. 在下說「在下已完成彙整」就會清空資料\n'+
-  '7. 請輸入「建立名單001到0」開始';
+  '7. 請輸入「建立名單001到099」開始';
 
 bot.on('join', function (event) {
   if(event.source.groupId){
@@ -67,7 +67,7 @@ bot.on('message', function(event) {
       // 設定關鍵字彩蛋
       // 班長超愛在群組裡講打手槍
       if(msg_txt.includes('打手槍')){
-        reply_candidate = ['你是不是偷看夢子洗澡打手槍啊~好羅曼蒂克喔！','一精十血，多尻傷身是也','如此這般 如此這般'];
+        reply_candidate = ['你又打手槍啊','一精十血，多尻傷身是也','如此這般 如此這般'];
         event.reply(reply_candidate[Math.floor(Math.random()*reply_candidate.length)]);
       }
       // 設定指令
@@ -120,7 +120,7 @@ bot.on('message', function(event) {
             if(not_yet_report == ''){
               User.updateMany({ group_id: group_id}, {content:''}).exec().catch(err=>console.log(err));
               event.reply([{type: 'text', text: report_txt},
-                {type:'text', text: '在下已完成彙整 你逆'}]);
+                {type:'text', text: '在下已完成彙整'}]);
             }
             else{
               if(report_txt == '') report_txt = '空空如也';
