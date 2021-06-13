@@ -67,7 +67,7 @@ bot.on('message', function(event) {
       // 設定關鍵字彩蛋
       // 班長超愛在群組裡講打手槍
       if(msg_txt.includes('打手槍')){
-        reply_candidate = ['你是不是偷看夢子洗澡打手槍啊','一精十血，多尻傷身是也','如此這般 如此這般'];
+        reply_candidate = ['你是不是偷看夢子洗澡打手槍啊~好羅曼蒂克喔！','一精十血，多尻傷身是也','如此這般 如此這般'];
         event.reply(reply_candidate[Math.floor(Math.random()*reply_candidate.length)]);
       }
       // 設定指令
